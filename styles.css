@@ -1,0 +1,176 @@
+/* Grundlegende Gestaltung für die Traumreisen‑Website */
+:root {
+  --primary-color: #8ecae6;
+  --secondary-color: #ffb703;
+  --accent-color: #fb8500;
+  --text-color: #333;
+  --background-color: #fefae0;
+}
+
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  line-height: 1.6;
+}
+
+.header {
+  text-align: center;
+  padding: 1rem;
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.header .subtitle {
+  margin: 0.5rem 0 0;
+  font-size: 1rem;
+}
+
+.content {
+  padding: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Kartenlayout für Charaktere, Altersgruppen und Geschichten */
+.card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  overflow: hidden;
+  width: 260px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 0.8rem;
+}
+
+.card-title {
+  margin: 0 0 0.5rem;
+  font-weight: bold;
+  color: var(--accent-color);
+}
+
+.card-text {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* Button‑Stil für Altersgruppen */
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.btn {
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: var(--secondary-color);
+  color: #fff;
+  transition: background-color 0.2s;
+}
+
+.btn:hover {
+  background-color: var(--accent-color);
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.modal .close {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--accent-color);
+}
+
+.modal-images {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.modal-images img {
+  max-width: 48%;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.story-text {
+  white-space: pre-wrap;
+  font-size: 1rem;
+}
+
+/* Eingebettete Bilder in der Geschichte
+ * Diese Bilder werden innerhalb des Textes der modalen Darstellung
+ * platziert. Sie sollen zentriert erscheinen und nicht den
+ * Lesefluss stören. */
+.embedded-image {
+  display: block;
+  margin: 1rem auto;
+  max-width: 80%;
+  border-radius: 4px;
+}
+
+@media (max-width: 600px) {
+  .card {
+    width: 100%;
+  }
+  .modal-images img {
+    max-width: 100%;
+  }
+}
